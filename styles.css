@@ -1,0 +1,54 @@
+@font-face {
+    font-family: StarForce3;
+    src: url(./fonts/SF3FontBold.ttf);
+}
+    
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: StarForce3;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sf1hp{
+    width: 100%;
+}
+
+h1{
+    margin: 10px;
+}
+
+.list-header, .hp-mem-sf1{
+    display: grid;
+    grid-template-columns: 20% 15% 55% 10%;
+    background-color: dodgerblue;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.hp-mem-sf1{
+    background-color: yellow;
+    transition-duration: 0.3s;
+    border: 1px solid black;
+    
+}
+
+.hp-mem-sf1:hover{
+    background-color: lightsalmon;
+    cursor: pointer;
+
+}
+
+.hp-mem-sf1.active{
+    background-color: greenyellow
+}
