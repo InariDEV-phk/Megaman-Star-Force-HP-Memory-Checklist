@@ -1,3 +1,4 @@
+const STORAGE_KEY = `activeItems_${window.location.pathname}`;
 const hpMemoryContainer = document.getElementById("hp-mem-list1")
 
 
@@ -13,13 +14,15 @@ function hpMemSF1(){
             <p>${item.item}</p>
         </li>
         `
-        hpMemoryContainer.innerHTML = myLi
+      
     })
+
+    hpMemoryContainer.innerHTML = myLi
 
 
 
  const allItems = hpMemoryContainer.querySelectorAll(".hp-mem-sf1");
- const savedActiveItems = JSON.parse(localStorage.getItem("activeItems")) || [];
+ const savedActiveItems = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
   allItems.forEach(item => {
     const index = Number(item.dataset.index);
@@ -33,7 +36,7 @@ function hpMemSF1(){
         .filter(i => i.classList.contains("active"))
         .map(i => Number(i.dataset.index));
 
-      localStorage.setItem("activeItems", JSON.stringify(activeIndices));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(activeIndices));
     });
   });
 }
